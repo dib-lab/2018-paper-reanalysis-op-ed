@@ -48,7 +48,7 @@
 
 \jvolume{00}
 \jnumber{0}
-\jyear{2017}
+\jyear{2018}
 
 
 \begin{document}
@@ -74,13 +74,13 @@ Advances in high-throughput, next-generation sequencing technologies have catapu
 
 Our interest in the issues surrounding reanalysis was spurred by a large-scale sequencing project: the Marine Microbial Transcriptome Sequencing Project (MMETSP), which generated 678 transcriptomes, spanning 396 different strains of eukaryotic microbial eukaryotes isolated from marine settings \cite{Caron2016}. This dataset is an invaluable resource within the oceanographic community \cite{Keeling2014, Caron2016}, as it exponentially expands the accessible genetic information base of marine protistan life. Moreover, the MMETSP has created a uniquely useful test dataset for computational biologists. The MMETSP dataset spans a large evolutionary history of organisms, and all of the 678 transcriptomes were prepared and sequenced in a consistent way \cite{Keeling2014}. The sequencing project, which was completed in 2014, was originally assembled by the National Center for Genome Resources using a custom pipeline that employed the best available computational tools at the time \cite{Simpson2009, Huang1999}.
 
-Since the original MMETSP analysis, new tools and techniques for the assembly of {\em de novo} transcriptomes from RNAseq data have been described and preexisting tools have been improved upon \cite{Grabherr2011}. Moreover, new annotation tools and databases have become available. The transcriptome assembly project described in Johnson et al. \cite{Johnson2018} was designed to create a push-button assembly framework that not only enables the reanalysis of these data sets, but creates a framework to facilitate easy and rapid reanalyses in the future.
+Since the original MMETSP analysis, new tools and techniques for the assembly of {\em de novo} transcriptomes from RNAseq data have been described and preexisting tools have been improved upon \cite{Grabherr2011}. Moreover, new annotation tools and databases have become available. The transcriptome assembly project described in \citet{Johnson2018} was designed to create a push-button assembly framework that not only enables the reanalysis of these data sets, but creates a framework to facilitate easy and rapid reanalyses in the future.
 
 These secondary data products of sequencing, such as annotated
 assemblies, should be viewed as hypotheses generated from the
 underlying biology, rather than some immutable `truth'. As such these
 secondary data products can continue to be improved as new tools are
-developed.  For example, we note that MacManes (2018) described several
+developed.  For example, we note that \citet{MacManes177253} described several
 limitations and challenges of current assembly technology and developed
 an improved Oyster River Protocol, which we could use to generate another,
 perhaps improved, MMETSP assembly.
@@ -100,7 +100,7 @@ by small research groups.
 \subsection{Storage of secondary data products}
 Funding agencies and academic journals now mandate the deposition of raw data into digital repositories (e.g. NCBI Sequence Read Archive (SRA) and Gene Expression Omnibus, European Nucleotide Archive). Thus, to date, the majority of the sequence data that has been generated and published are openly available online for reference and use in other studies. The sharing and availability of raw data from high-throughput sequencing studies has been largely managed through the development of archival services such as the SRA, which was established as part of the International Nucleotide Sequence Database Collaboration (INSDC)\cite{Kodama2012, Shumway2009}. The SRA currently contains more than 1.8e16 bases of information (\textasciitilde7e15 are open access)\footnote{As of 17 May 2018.}. While a tremendous resource for biological inquiry, a major problem remains in that raw sequencing data is not the most directly useful form of sequencing data. Rather, biologists rely heavily upon the computationally generated secondary products of sequencing reads (e.g. assembled transcriptomes or genomes, annotations, associated count-based data, etc.). There is a dearth of these secondary products in central, publicly accessible databases, such as the  Transcriptome Shotgun Assembly (TSA) Sequence Database.
 
-In fact, a substantial proportion of these data products might be aptly categorized as `dark data,' as they are largely undiscoverable and often archived independently in association with a publication or on private servers. Even more limiting, however, is that the guidelines for public databases such as the TSA specifically state that ``Assemblies from sequences not directly sequenced by the submitter'' should not be uploaded to the TSA, thereby excluding the potential for reassembled datasets to be made available and directly linked to preexisting BioProjects, BioSamples, TSAs, and SRA entries.\footnote{@CTB do we have a citation/link for this policy?}
+In fact, a substantial proportion of these data products might be aptly categorized as ``dark data,'' as they are largely undiscoverable and often archived independently in association with a publication or on private servers. Even more limiting, however, is that the guidelines for public databases such as the TSA specifically state that ``Assemblies from sequences not directly sequenced by the submitter'' should not be uploaded to the TSA, thereby excluding the potential for reassembled datasets to be made available and directly linked to preexisting BioProjects, BioSamples, TSAs, and SRA entries (https://www.ncbi.nlm.nih.gov/genbank/tsa/).
 
 From the perspective of our MMETSP reanalysis, we argue the community needs more than a place to put the primary and secondary data products associated with a single publication. Ideally, the results of each reanalysis would be deposited in a discoverable location, but would have a coherent archival procedure that is lab-independent, easily searchable, and ``forward discoverable'' (i.e. when a  new version of a data product is released, old versions can point to the new version). Moreover, such an archival platform would ideally document the full provenance of the secondary data product. Movement towards this kind of data archival system are being made both with the development of alternative scientific data publication models (e.g. the Research Object\cite{Bechhofer2013}) as well as integration of metadata models (such as the Resource Description Framework) onto existing scientific databases like the European Bioinformatics Institute (EBI) \cite{Callahan2013}, but policies surrounding secondary data products will need to change.
 
@@ -143,15 +143,13 @@ cost, undemanding way for small research groups (i.e. a graduate
 student, ) to perform large-scale reanalysis projects in an efficient
 and publicly accessible way. The direct linking of protocols and
 metadata to output data products is paramount in the data heavy future
-of scientific advancement.
-
-We also identified several lingering issues surrounding large scale
+of scientific advancement. We also identified several lingering issues surrounding large scale
 reanalysis.
 
 Actual computation on these large datasets is a non-trivial issue, as
 it requires access to facilities with sufficiently large, high-memory
 machines.  Amazon Web Service instances and other ``cloud'' platforms,
-including XSEDE, provide flexible computating options, and are broadly
+including XSEDE, provide flexible computing options, and are broadly
 accessible. Cloud-based systems, however, tend to be more expensive
 per computation hour than local resources. High Performance Computing
 (HPC) resources at local institutions represent another potential site
@@ -160,7 +158,7 @@ potentially balk at larger, more node-consuming procedures; moreover,
 bioinformatics tools may poorly optimized for HPCs: Trinity, used in
 our pipeline, creates many small files for each run, and this
 repeatedly caused disk slowdowns on our HPC.  The reanalysis by
-Johnson et al. \cite{Johnson2018} attempted to use both but ultimately
+\citet{Johnson2018} attempted to use both but ultimately
 found that the HPC provided the most consistent scalable automation
 for running hundreds of jobs in a cost efficient manner.  However,
 more generally, we see no global solution for identifying and
