@@ -38,7 +38,7 @@ Advances in high-throughput, next-generation sequencing technologies have catapu
 
 Our interest in the issues surrounding reanalysis was spurred by a large-scale sequencing project: the Marine Microbial Transcriptome Sequencing Project (MMETSP), which generated 678 transcriptomes, spanning 396 different strains of eukaryotic microbial eukaryotes isolated from marine settings \cite{Caron2016}. This dataset is an invaluable resource within the oceanographic community \cite{Keeling2014, Caron2016}, as it exponentially expands the accessible genetic information base of marine protistan life. Moreover, the MMETSP has created a uniquely useful test dataset for computational biologists. The MMETSP dataset spans a large evolutionary history of organisms, and all of the 678 transcriptomes were prepared and sequenced in a consistent way \cite{Keeling2014}. The sequencing project, which was completed in 2014, was originally assembled by the National Center for Genome Resources using a custom pipeline that employed the best available computational tools at the time \cite{Simpson2009, Huang1999}.
 
-Since the original MMETSP analysis, new tools and techniques for the assembly of {\em de novo} transcriptomes from RNAseq data have been described and preexisting tools have been improved upon \cite{Grabherr2011}. Moreover, new annotation tools and databases have become available. The transcriptome assembly project described in Johnson et al. \cite{Cohen2017@@@} was designed to create a push-button assembly framework that not only enables the reanalysis of these data sets, but creates a framework to facilitate easy and rapid reanalyses in the future.
+Since the original MMETSP analysis, new tools and techniques for the assembly of {\em de novo} transcriptomes from RNAseq data have been described and preexisting tools have been improved upon \cite{Grabherr2011}. Moreover, new annotation tools and databases have become available. The transcriptome assembly project described in Johnson et al. \cite{Johnson2018} was designed to create a push-button assembly framework that not only enables the reanalysis of these data sets, but creates a framework to facilitate easy and rapid reanalyses in the future.
 
 These secondary data products of sequencing, such as annotated
 assemblies, should be viewed as hypotheses generated from the
@@ -132,7 +132,7 @@ potentially balk at larger, more node-consuming procedures; moreover,
 bioinformatics tools may poorly optimized for HPCs: Trinity, used in
 our pipeline, creates many small files for each run, and this
 repeatedly caused disk slowdowns on our HPC.  The reanalysis by
-Johnson et al. \cite{Cohen2017@@} attempted to use both but ultimately
+Johnson et al. \cite{Johnson2018} attempted to use both but ultimately
 found that the HPC provided the most consistent scalable automation
 for running hundreds of jobs in a cost efficient manner.  However,
 more generally, we see no global solution for identifying and
