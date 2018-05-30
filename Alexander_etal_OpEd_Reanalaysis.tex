@@ -88,12 +88,12 @@ From the perspective of our MMETSP reanalysis, we argue the community needs more
 In the absence of a community database specifically for the type of
 secondary product that was produced in this analysis, we opted to
 upload the assemblies, annotations, and counts to Zenodo
-(https://zenodo.org), a scientific data repository founded by CERN,
+(https://doi.org/10.5281/zenodo.746048), a scientific data repository founded by CERN,
 which provided DOIs for the assemblies.  We then created a GitHub
-repository containing the scripts used to generate the assemblies, and
+repository containing the scripts used to generate the assemblies (https://github.com/dib-lab/dib-MMETSP/tree/1), and
 added the output data DOIs (\Cref{FlowDiagram}).  The entirety of the
 repository was then archived with Zenodo, which generated a single DOI
-for the project.
+for the project (https://doi.org/10.5281/zenodo.249982).
 
 As such, the scripts used in the generation of transcriptomes are
 directly linked through a unique DOI to the data products that are
@@ -103,16 +103,18 @@ parameters or tools, and the new pipeline and output files can be
 archived again with Zenodo using the same approach as above.
 Moreover, the Zenodo archival system will then automatically indicate
 the presence of other versions of a given repository such that a user
-might be sure to use the newest version of an assembly. In future,
+might be sure to use the newest version of an assembly. In the future,
 such an approach might be further complemented by the integration of a
 JSON Linked Data file detailing the metadata for the assembly product,
 such as the pipeline used and previous versions of the assemblies.
+
+It should be noted that uploading the assemblies to Zenodo was not an automated process. Addition of new versions of files on Zenodo must be manually curated. Since the start of this project, the Open Science Framework (OSF) and the accompanying automated command-line client, osfclient has been established. In the future, large-scale projects such as the assemblies created in this analysis will benefit from the integration of osfclient by automatically uploading data products to an OSF projects, which generate an OSF-specific DOI.
 
 \section{Conclusion}
 
 The Github-Zenodo framework presented here represents a relatively low
 cost, undemanding way for small research groups (i.e. a graduate
-student, ) to perform large-scale reanalysis projects in an efficient
+student) to perform large-scale reanalysis projects in an efficient
 and publicly accessible way. The direct linking of protocols and
 metadata to output data products is paramount in the data heavy future
 of scientific advancement.
