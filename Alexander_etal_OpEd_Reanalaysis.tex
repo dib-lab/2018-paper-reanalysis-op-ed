@@ -33,13 +33,14 @@
 \title{Keeping it light: (Re)analyzing community-wide datasets without major infrastructure}
 
 \author[1]{Harriet Alexander}
-\author[1]{Lisa K. Johnson}
+\author[1,2]{Lisa K. Johnson}
 \author[1,\authfn{1}]{C. Titus Brown}
 
 \affil[1]{Population Health and Reproduction, University of California, Davis, CA, USA}
+\affil[2]{Molecular, Cellular, and Integrative Physiology Graduate Group, University of California, Davis, CA, USA}
 
 %%% Author Notes
-\authnote{\authfn{1}titus@idyll.org}
+\authnote{\authfn{1}ctbrown@ucdavis.edu}
 
 
 \papercat{Commentary}
@@ -57,7 +58,7 @@
 \maketitle
 
   \begin{abstract}
-    Sequencing technology has revolutionized the field of biology, shifting biology from a data-limited to data-replete state. Central to the interpretation of sequencing data are the computational tools and approaches that convert raw data into biologically meaningful information. Both the tools and the generation of data are actively evolving, yet the practice of re-analysis of previously generated data with new tools is not commonplace. Re-analysis of existing data provides an affordable means of generating new information and will likely become more routine within biology, yet necessitates a new set of considerations for best practices and resource development. Here, we discuss several practices that we believe to be broadly applicable when re-analyzing data, especially when done by small research groups.
+    DNA sequencing technology has revolutionized the field of biology, shifting biology from a data-limited to data-rich state. Central to the interpretation of sequencing data are the computational tools and approaches that convert raw data into biologically meaningful information. Both the tools and the generation of data are actively evolving, yet the practice of re-analysis of previously generated data with new tools is not commonplace. Re-analysis of existing data provides an affordable means of generating new information and will likely become more routine within biology, yet necessitates a new set of considerations for best practices and resource development. Here, we discuss several practices that we believe to be broadly applicable when re-analyzing data, especially when done by small research groups.
 
   \end{abstract}
 
@@ -96,7 +97,7 @@ especially when done by small research groups.
 
 \section{Main text}
 \subsection{Storage of secondary data products}
-Funding agencies and academic journals now mandate the deposition of raw data into digital repositories (e.g. NCBI Sequence Read Archive (SRA) and Gene Expression Omnibus, European Nucleotide Archive). Thus, to date, the majority of the sequence data that has been generated and published are openly available online for reference and use in other studies. The sharing and availability of raw data from high-throughput sequencing studies has been largely managed through the development of archival services such as the SRA, which was established as part of the International Nucleotide Sequence Database Collaboration (INSDC)\cite{Kodama2012, Shumway2009}. The SRA currently contains more than 1.8e16 bases of information (\textasciitilde7e15 are open access)\footnote{As of 17 May 2018.}. While a tremendous resource for biological inquiry, a major problem remains in that raw sequencing data is not the most directly useful form of sequencing data. Rather, biologists rely heavily upon the computationally generated secondary products of sequencing reads (e.g. assembled transcriptomes or genomes, annotations, associated count-based data, etc.). There is a dearth of these secondary products in central, publicly accessible databases, such as the  Transcriptome Shotgun Assembly (TSA) Sequence Database.
+Funding agencies and academic journals now mandate the deposition of raw data into digital repositories (e.g. NCBI Sequence Read Archive (SRA) and Gene Expression Omnibus, European Nucleotide Archive). Thus, to date, the majority of the sequence data that has been generated and published is openly available online for reference and use in other studies. The sharing and availability of raw data from high-throughput sequencing studies has been largely managed through the development of archival services such as the SRA, which was established as part of the International Nucleotide Sequence Database Collaboration (INSDC)\cite{Kodama2012, Shumway2009}. The SRA currently contains more than 1.8e16 bases of information (\textasciitilde7e15 are open access)\footnote{As of 17 May 2018.}. While a tremendous resource for biological inquiry, a major problem remains in that raw sequencing data is not the most directly useful form of sequencing data. Rather, biologists rely heavily upon the computationally generated secondary products of sequencing reads (e.g. assembled transcriptomes or genomes, annotations, associated count-based data, etc.). There is a dearth of these secondary products in central, publicly accessible databases, such as the  Transcriptome Shotgun Assembly (TSA) Sequence Database.
 
 In fact, a substantial proportion of these data products might be aptly categorized as ``dark data,'' as they are largely undiscoverable and often archived independently in association with a publication or on private servers. Even more limiting, however, is that the guidelines for public databases such as the TSA specifically state that ``Assemblies from sequences not directly sequenced by the submitter'' should not be uploaded to the TSA, thereby excluding the potential for reassembled datasets to be made available and directly linked to preexisting BioProjects, BioSamples, TSAs, and SRA entries (https://www.ncbi.nlm.nih.gov/genbank/tsa/).
 
@@ -109,12 +110,8 @@ In the absence of a community database specifically for the type of
 secondary product that was produced in this analysis, we opted to
 upload the assemblies, annotations, and counts to Zenodo
 (https://zenodo.org), a scientific data repository founded by CERN,
-which provided DOIs for the assemblies (https://doi.org/10.5281/zenodo.746048).
-We then created a GitHub
-repository containing the scripts used to generate the assemblies, and
-added the output data DOIs (\ref{fig:FlowDiagram}).  The entirety of the
-repository was then archived with Zenodo, which generated a single DOI
-for the project (https://doi.org/10.5281/zenodo.249982).
+which provided a DOI for the assemblies (https://doi.org/10.5281/zenodo.740440). The header information for each assembly was modified to contain the DOI. We then created a GitHub
+repository containing the scripts used to generate the assemblies (\ref{fig:FlowDiagram}) .  The repository was then archived with Zenodo, which generated a single DOI for the project (https://doi.org/10.5281/zenodo.594854).
 
 As such, the scripts used in the generation of transcriptomes are
 directly linked through a unique DOI to the data products that are
@@ -127,7 +124,7 @@ the presence of other versions of a given repository such that a user
 might be sure to use the newest version of an assembly. In the future,
 such an approach might be further complemented by the integration of a
 JSON Linked Data file detailing the metadata for the assembly product,
-such as the pipeline used and previous versions of the assemblies.\footnote{It should be noted that uploading the assemblies to Zenodo was not an automated process. New versions of files on Zenodo must be manually curated. Since the start of this project, the Open Science Framework (OSF) and the accompanying automated command-line client, osfclient has been established. In the future, large-scale projects such as the assemblies created in this analysis will benefit from the integration of OSF command-line client by automatically uploading data products to an OSF project, which generate an OSF-specific DOI.}
+such as the pipeline used and previous versions of the assemblies.\footnote{It should be noted that uploading the assemblies to Zenodo was not an automated process. New versions of files on Zenodo must be manually curated. Since the start of this project, the Open Science Framework (OSF) and the accompanying automated command-line client, osfclient has been established. In the future, large-scale projects such as the assemblies created in this analysis may benefit from the integration of OSF command-line client by automatically uploading data products to an OSF project, which generate an OSF-specific DOI.}
 
 \begin{figure}
   \centering
@@ -138,9 +135,8 @@ such as the pipeline used and previous versions of the assemblies.\footnote{It s
 \section{Conclusion}
 
 The Github-Zenodo framework presented here represents a relatively low
-cost, undemanding way for small research groups (i.e. a graduate
-student) to perform large-scale re-analysis projects in an efficient
-and publicly accessible way. The direct linking of protocols and
+cost way for small research groups (i.e. a graduate
+student) to perform large-scale re-analysis projects in a publicly accessible way. The direct linking of protocols and
 metadata to output data products is paramount in the data heavy future
 of scientific advancement. We also identified several lingering issues surrounding large scale
 re-analysis.
@@ -154,7 +150,7 @@ per computation hour than local resources. High Performance Computing
 (HPC) resources at local institutions represent another potential site
 of compute ability.  However, HPCs can be temperamental and
 potentially balk at larger, more node-consuming procedures; moreover,
-bioinformatics tools may poorly optimized for HPCs: Trinity, used in
+bioinformatics tools may be poorly optimized for HPCs: Trinity, used in
 our pipeline, creates many small files for each run, and this
 repeatedly caused disk slowdowns on our HPC.  The re-analysis by
 \citet{Johnson2018} attempted to use both but ultimately
