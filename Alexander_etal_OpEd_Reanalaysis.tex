@@ -27,6 +27,8 @@
 
 \usepackage{graphicx}
 \usepackage{siunitx}
+\usepackage{lineno}
+\linenumbers
 
 
 
@@ -76,7 +78,7 @@ Advances in high-throughput, next-generation sequencing technologies have catapu
 
 Our interest in the issues surrounding re-analysis was spurred by a large-scale sequencing project: the Marine Microbial Transcriptome Sequencing Project (MMETSP), which generated 678 transcriptomes, spanning 396 different strains of eukaryotic microbial eukaryotes isolated from marine settings \cite{Caron2016}. This dataset is an invaluable resource within the oceanographic community \cite{Keeling2014, Caron2016}, as it exponentially expands the accessible genetic information base of marine protistan life. Moreover, the MMETSP has created a uniquely useful test dataset for computational biologists. The MMETSP dataset spans a large evolutionary history of organisms, and all of the 678 transcriptomes were prepared and sequenced in a consistent way \cite{Keeling2014}. The sequencing project, which was completed in 2014, was originally assembled by the National Center for Genome Resources using a custom pipeline that employed the best available computational tools at the time \cite{Simpson2009, Huang1999}.
 
-Since the original MMETSP analysis, new tools and techniques for the assembly of {\em de novo} transcriptomes from RNAseq data have been described and preexisting tools have been improved upon \cite{Grabherr2011}. Moreover, new annotation tools and databases have become available. The transcriptome assembly project described in \citet{Johnson2018} was designed to create a push-button assembly framework that not only enables the re-analysis of these datasets, but creates a framework to facilitate easy and rapid re-analyses in the future.
+Since the original MMETSP analysis, new tools and techniques for the assembly of {\em de novo} transcriptomes from RNAseq data have been described and preexisting tools have been improved upon \cite{Grabherr2011}. Moreover, new annotation tools and databases have become available. The transcriptome assembly project described in \citet{Johnson2018} was designed to create a streamlined and reproducible assembly framework that not only enables the re-analysis of these datasets, but creates a framework to facilitate easy and rapid re-analyses in the future.
 
 These secondary data products of sequencing, such as annotated
 assemblies, should be viewed as hypotheses generated from the
@@ -111,8 +113,8 @@ secondary product that was produced in this analysis, we opted to
 upload the assemblies, annotations, and counts to Zenodo
 (\href{https://zenodo.org}{https://zenodo.org}), a scientific data repository founded by CERN,
 which provided a DOI for the assemblies (\href{https://doi.org/10.5281/zenodo.740440}{https://doi.org/10.5281/zenodo.740440}).
-The header information for each assembly was modified to contain the DOI. We then created a GitHub
-repository containing the scripts used to generate the assemblies (\ref{fig:FlowDiagram}).
+The header information for each assembly was modified to contain the DOI. We then created a Github
+repository containing the scripts used to generate the assemblies.
 The repository was then archived with Zenodo,
 which generated a single DOI for the project
 (\href{https://doi.org/10.5281/zenodo.594854}{https://doi.org/10.5281/zenodo.594854}).\footnote{Individual components of the project are assigned specific DOIs, for example: translated peptide files: \href{https://doi.org/10.5281/zenodo.745633}{https://doi.org/10.5281/zenodo.745633};
@@ -133,17 +135,16 @@ such an approach might be further complemented by the integration of a
 JSON Linked Data file detailing the metadata for the assembly product,
 such as the pipeline used and previous versions of the assemblies.\footnote{It should be noted that uploading the assemblies to Zenodo was not an automated process. New versions of files on Zenodo must be manually curated. Since the start of this project, the Open Science Framework (OSF) and the accompanying automated command-line client, osfclient has been established. In the future, large-scale projects such as the assemblies created in this analysis may benefit from the integration of OSF command-line client by automatically uploading data products to an OSF project, which generate an OSF-specific DOI.}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{Diagram.pdf}
-  \caption{Flow of coupled script and data product evolution.}
-  \label{fig:FlowDiagram}
-\end{figure}
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=\linewidth]{Diagram.pdf}
+%   \caption{Flow of coupled script and data product evolution.}
+%   \label{fig:FlowDiagram}
+% \end{figure}
 \section{Conclusion}
 
-The Github-Zenodo framework presented here represents a relatively low
-cost way for small research groups (i.e. a graduate
-student) to perform large-scale re-analysis projects in a publicly accessible way. The direct linking of protocols and
+The Github-Zenodo framework presented here represents an efficent way for small research groups (i.e. a graduate
+student) to host and link both the code and results from large-scale re-analysis projects in a publicly accessible way. The direct linking of protocols and
 metadata to output data products is paramount in the data heavy future
 of scientific advancement. We also identified several lingering issues surrounding large scale
 re-analysis.
