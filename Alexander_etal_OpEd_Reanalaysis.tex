@@ -27,20 +27,20 @@
 
 \usepackage{graphicx}
 \usepackage{siunitx}
-\usepackage{lineno}
-\linenumbers
 
 
 
 \title{Keeping it light: (Re)analyzing community-wide datasets without major infrastructure}
 
-\author[1]{Harriet Alexander}
-\author[1,2]{Lisa K. Johnson}
-\author[1,2,3\authfn{1}]{C. Titus Brown}
+\author[1,2]{Harriet Alexander}
+\author[1,3]{Lisa K. Johnson}
+\author[1,3,4\authfn{1}]{C. Titus Brown}
 
 \affil[1]{Population Health and Reproduction, University of California, Davis, CA, USA}
-\affil[2]{Molecular, Cellular, and Integrative Physiology Graduate Group, University of California, Davis, CA, USA}
-\affil[3]{Genome Center, University of California Davis, CA, USA}
+\affil[2]{Biology Department, Woods Hole Oceanographic Institution, Woods Hole, MA, USA}
+\affil[3]{Molecular, Cellular, and Integrative Physiology Graduate Group, University of California, Davis, CA, USA}
+\affil[4]{Genome Center, University of California Davis, CA, USA}
+
 %%% Author Notes
 \authnote{\authfn{1}ctbrown@ucdavis.edu}
 
@@ -99,7 +99,7 @@ especially when done by small research groups.
 
 \section{Main text}
 \subsection{Storage of secondary data products}
-Funding agencies and academic journals now mandate the deposition of raw data into digital repositories (e.g. NCBI Sequence Read Archive (SRA) and Gene Expression Omnibus, European Nucleotide Archive). Thus, to date, the majority of the sequence data that has been generated and published is openly available online for reference and use in other studies. The sharing and availability of raw data from high-throughput sequencing studies has been largely managed through the development of archival services such as the SRA, which was established as part of the International Nucleotide Sequence Database Collaboration (INSDC)\cite{Kodama2012, Shumway2009}. The SRA currently contains more than 1.8e16 bases of information (\textasciitilde7e15 are open access)\footnote{As of 17 May 2018.}. While a tremendous resource for biological inquiry, a major problem remains in that raw sequencing data is not the most directly useful form of sequencing data. Rather, biologists rely heavily upon the computationally generated secondary products of sequencing reads (e.g. assembled transcriptomes or genomes, annotations, associated count-based data, etc.). There is a dearth of these secondary products in central, publicly accessible databases, such as the  Transcriptome Shotgun Assembly (TSA) Sequence Database.
+Funding agencies and academic journals now mandate the deposition of raw data into digital repositories (e.g. NCBI Sequence Read Archive (SRA) and Gene Expression Omnibus, European Nucleotide Archive). Thus, to date, the majority of the sequence data that has been generated and published is openly available online for reference and use in other studies. The sharing and availability of raw data from high-throughput sequencing studies has been largely managed through the development of archival services such as the SRA, which was established as part of the International Nucleotide Sequence Database Collaboration (INSDC)\cite{Shumway2009}. The SRA currently contains more than 1.8e16 bases of information (\textasciitilde7e15 are open access)\footnote{As of 17 May 2018.}. While a tremendous resource for biological inquiry, a major problem remains in that raw sequencing data is not the most directly useful form of sequencing data. Rather, biologists rely heavily upon the computationally generated secondary products of sequencing reads (e.g. assembled transcriptomes or genomes, annotations, associated count-based data, etc.). There is a dearth of these secondary products in central, publicly accessible databases, such as the  Transcriptome Shotgun Assembly (TSA) Sequence Database.
 
 In fact, a substantial proportion of these data products might be aptly categorized as ``dark data,'' as they are largely undiscoverable and often archived independently in association with a publication or on private servers. Even more limiting, however, is that the guidelines for public databases such as the TSA specifically state that ``Assemblies from sequences not directly sequenced by the submitter'' should not be uploaded to the TSA, thereby excluding the potential for reassembled datasets to be made available and directly linked to preexisting BioProjects, BioSamples, TSAs, and SRA entries (https://www.ncbi.nlm.nih.gov/genbank/tsa/).
 
